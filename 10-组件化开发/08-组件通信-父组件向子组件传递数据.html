@@ -1,0 +1,90 @@
+<!--
+ * @Description: 
+ * @version: 
+ * @Author: henggao
+ * @Date: 2019-10-08 10:13:23
+ * @LastEditors: henggao
+ * @LastEditTime: 2019-10-10 17:34:07
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<div id="app">
+    <!-- 3. 使用组件 -->
+    <!-- <cpn cmovies='movies' cmessage='message'></cpn>   -->
+    <!-- 一定要用v-bind，不然不会获取数据 -->
+
+    <!-- <cpn v-bind:cmovies='movies' :cmessage='message'></cpn> -->
+    <!-- aaaa -->
+    <cpn v-bind:cmovies='movies' :cmessage='message'></cpn>     
+</div>
+
+<!-- 2.template标签 -->
+<template id="cpn">
+    <div>
+        <!-- <p>{{cmovies}}</p> -->
+        <ul>
+            <li v-for='item in cmovies'>{{item}}</li>
+        </ul>
+        <h2>{{cmessage}}</h2>
+    </div>
+</template>
+
+<script src="../js/vue.js"></script>   
+<script>
+    const cpn = {
+        template:'#cpn',
+
+        // 1.数组
+        // props:['cmovies','cmessage'], //数组
+
+        // 2.对象
+        props:{  //对象
+            // 2.1.类型限制
+            // cmovies:Array,
+            // cmessage:String,
+
+            //2.2.提供一些默认值,以及必传值
+            cmessage:{
+                type:String, //类型
+                default:'aaaa',  //默认值
+                require: true, //必传值
+            },
+            cmovies:{
+                type:Array,
+                // default:[],   //vue2.5.3以下不会报错，2.5.17会报错
+                // 类型是对象或者是数组时，默认值必须是一个函数
+                default(){
+                    return []
+                }
+            }
+        },
+        data(){
+            return {}
+        },
+        methods:{
+
+        }
+    }
+
+    const app = new Vue({
+        el:'#app',
+        data:{
+            message:'Hello,Vue!',
+            movies:['我和我的祖国','中国机长','攀登者']
+        },
+        components:{
+            cpn
+        }
+    })
+
+</script>
+</body>
+</html>
