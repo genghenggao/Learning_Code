@@ -1,0 +1,76 @@
+<!--
+ * @Description: 
+ * @version: 
+ * @Author: henggao
+ * @Date: 2019-10-08 18:47:29
+ * @LastEditors: henggao
+ * @LastEditTime: 2019-10-08 20:17:46
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // const obj = new object()
+        // const obj = {
+        //     name = 'James',
+        //     age: 35,
+        //     run:function(){
+        //         console.log('在奔跑');
+        //     },
+        //     eat:function(){
+        //         console.log('在吃东西')
+        //     }
+        // }
+
+        // 1、属性的增强写法
+        const name = 'Kobe'
+        const age = 24
+        const height = 1.96
+
+        // ES5的写法
+        // const obj = {
+        //     name:name,
+        //     age:age,
+        //     height:height
+        // }
+        // console.log(obj);
+        
+        const obj = {
+            name,
+            age,
+            height
+        }
+        console.log(obj);
+
+
+        // 2、函数的增强方法
+        // ES5的写法
+        const obj ={
+            run: function(){
+
+            },
+            eat:function(){
+
+            }
+        }
+
+        //增强写法  
+        const obj = {
+            run(){
+
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

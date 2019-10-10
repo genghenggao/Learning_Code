@@ -1,0 +1,67 @@
+<!--
+ * @Description: 
+ * @version: 
+ * @Author: henggao
+ * @Date: 2019-10-08 10:13:23
+ * @LastEditors: henggao
+ * @LastEditTime: 2019-10-09 09:06:28
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div id="app">
+    <!-- 1、 .stop修饰符使用 -->
+    <div @click="divClick">
+        aaaa
+        <button @click.stop = 'btnClick'>按钮</button>
+    </div>
+    <br>
+
+    <!-- 2、 .prevent修饰符使用 -->
+    <form action = 'baidu'>
+        <input type="submit" value="提交" @click.prevent='submitClick'>
+    </form>
+    <br>
+
+    <!-- 3、 .监听某个键盘的键帽 -->
+    <input type="text" @keyup.enter='keyUp'>
+    <br>
+    <br>
+
+    <!-- 4、 .once修饰符使用 -->
+    <button @click.once='btn2Click'>按钮2</button>
+</div>
+<script src="../js/vue.js"></script>   
+<script>
+    const app = new Vue({
+        el:'#app',
+        data:{
+            message:'Hello,Vue!'
+        },
+        methods:{
+            btnClick(){
+                console.log('btnClick')
+            },
+            divClick(){
+                console.log('divClick')
+            },
+            submitClick(){
+                console.log('submitClick')
+            },
+            keyUp(){
+                console.log('keyUp')
+            },
+            btn2Click(){
+                console.log('btn2Click')
+            }
+        }
+    })
+</script>
+</body>
+</html>

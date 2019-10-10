@@ -1,0 +1,35 @@
+<!--
+ * @Description: 
+ * @version: 
+ * @Author: henggao
+ * @Date: 2019-10-08 10:13:23
+ * @LastEditors: henggao
+ * @LastEditTime: 2019-10-08 10:50:49
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div id="app" v-cloak>
+    <h2>{{message}}</h2>
+</div>
+<script src="../js/vue.js"></script>   
+<script>
+    // 在vue解析解之前，div中有一个属性v-cloak
+    // 在vue解析解之后，div中没有一个属性v-cloak
+    setTimeout(function(){
+    const app = new Vue({
+        el:'#app',
+        data:{
+            message:'Hello,Vue !'
+        }
+    })
+    },3000)
+</script>
+</body>
+</html>

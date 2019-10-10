@@ -1,0 +1,55 @@
+<!--
+ * @Description: 
+ * @version: 
+ * @Author: henggao
+ * @Date: 2019-10-08 10:13:23
+ * @LastEditors: henggao
+ * @LastEditTime: 2019-10-08 18:40:30
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 通过定义methods -->
+        <h2>{{getfulName()}}</h2>
+        <h2>{{getfulName()}}</h2>
+        <h2>{{getfulName()}}</h2>
+        <!-- 通过computed -->
+        <h2>{{fullName}}</h2>
+        <h2>{{fullName}}</h2>
+        <h2>{{fullName}}</h2>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello,Vue!',
+                firstName: 'Kobe',
+                lastName: 'Bryant'
+            },
+            methods: {
+                getfulName: function () {
+                    console.log('getfullName');
+                    return this.firstName + " " + this.lastName
+                }
+            },
+            computed: {
+                fullName: function () {
+                    console.log('fullName');
+                    return this.firstName + " " + this.lastName
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

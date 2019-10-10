@@ -1,0 +1,37 @@
+<!--
+ * @Description: 
+ * @version: 
+ * @Author: henggao
+ * @Date: 2019-10-08 10:13:23
+ * @LastEditors: henggao
+ * @LastEditTime: 2019-10-08 11:31:37
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div id="app">
+    <h2>{{message}}</h2>
+    <img v-bind:src="imgURL" alt="">
+    <a v-bind:href="aHerf">百度一下</a>
+    <img :src="imgURL" alt="">
+    <a :href="aHerf">百度一下</a>
+</div>
+<script src="../js/vue.js"></script>   
+<script>
+    const app = new Vue({
+        el:'#app',
+        data:{
+            message:'Hello,Vue!',
+            imgURL:'https://c-ssl.duitang.com/uploads/item/201504/21/20150421H1202_YRNUW.jpeg',
+            aHerf:'https://www.baidu.com/'
+       }
+    })
+</script>
+</body>
+</html>
